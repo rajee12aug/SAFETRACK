@@ -1,0 +1,353 @@
+/* Basic Reset & Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Global Body Styling --- */
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* A more modern, professional font stack */
+    background-color: #eef2f6; /* A very light, subtle grey-blue for sophistication - now the primary background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333; /* Darker grey for primary text, good readability */
+    line-height: 1.6;
+    /* Removed: position: relative; */
+    /* Removed: overflow: hidden; */
+}
+
+/* --- Main Content Containers (Login/Form & Admin Dashboard) --- */
+/* Common styles for both .container and .admin-dashboard-container */
+.container,
+.admin-dashboard-container {
+    background-color: #ffffff; /* Crisp white background for content */
+    padding: 40px; /* Increased padding for more breathing room */
+    border-radius: 10px; /* Slightly more rounded corners for a softer look */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow for more depth */
+    width: 100%;
+    text-align: center;
+    /* Removed: position: relative; */
+    /* Removed: z-index: 1; */
+    /* Add a subtle border or outline for definition, but keep it light */
+    border: 1px solid rgba(220, 220, 220, 0.5);
+}
+
+.container {
+    max-width: 480px; /* Slightly wider for better form layout */
+}
+
+/* Headings */
+h2 {
+    color: #0056b3; /* Professional blue, slightly darker for impact */
+    margin-bottom: 25px; /* More space below heading */
+    font-size: 2em; /* Slightly larger heading for emphasis */
+    font-weight: 600; /* Medium bold for modern look */
+    border-bottom: 2px solid #e0e0e0; /* Clean, light separator */
+    padding-bottom: 15px;
+    letter-spacing: -0.02em; /* Subtle letter spacing adjustment */
+}
+
+p {
+    margin-bottom: 20px; /* More space below paragraphs */
+    color: #555; /* Softer grey for body text */
+}
+
+/* --- Form Styling --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Slightly increased gap between form elements */
+    margin-top: 25px; /* More space above the form */
+    text-align: left; /* Align form elements to the left for standard forms */
+}
+
+label {
+    font-weight: 600; /* Medium bold */
+    color: #444; /* Slightly darker label color */
+    margin-bottom: 8px; /* More space below label before input */
+    display: block;
+    font-size: 0.95em; /* Slightly smaller for inputs */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 14px; /* Larger padding for easier interaction */
+    border: 1px solid #c2d1e0; /* Softer, professional border color */
+    border-radius: 6px; /* Slightly more rounded inputs */
+    font-size: 1.05em; /* Slightly larger font inside inputs */
+    color: #333; /* Darker text in inputs */
+    background-color: #fcfdfe; /* Very slight off-white for input background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #007bff; /* Primary blue for focus highlight */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Softer, wider focus shadow */
+    background-color: #ffffff; /* White background on focus */
+}
+
+button[type="submit"] {
+    background-color: #007bff; /* Primary action blue */
+    color: white;
+    padding: 14px 25px; /* Larger padding for button */
+    border: none;
+    border-radius: 6px; /* Match input border-radius */
+    cursor: pointer;
+    font-size: 1.15em; /* Slightly larger font for button text */
+    font-weight: 600; /* Medium bold */
+    letter-spacing: 0.02em; /* Subtle letter spacing */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Gentle lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Soft shadow on hover */
+}
+
+/* Link Styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500; /* Medium weight for links */
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Message Styles (Error and Success) */
+.error {
+    color: #c0392b; /* A more subtle, deeper red */
+    background-color: #fef0f0; /* Very light red background */
+    border: 1px solid #e74c3c; /* Red border */
+    padding: 12px;
+    margin-bottom: 20px; /* More space below messages */
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: left; /* Align message text to left */
+}
+
+.success {
+    color: #27ae60; /* A more subtle, deeper green */
+    background-color: #eafaea; /* Very light green background */
+    border: 1px solid #2ecc71; /* Green border */
+    padding: 12px;
+    margin-bottom: 20px; /* More space below messages */
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: left; /* Align message text to left */
+}
+
+/* Checklist specific styling for checkboxes */
+label input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px; /* Slightly more space */
+    vertical-align: middle;
+    transform: scale(1.3); /* Slightly larger checkbox */
+    accent-color: #007bff; /* Colors the checkbox itself */
+}
+
+label.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Specific styles for the camera feed */
+.camera-feed-container {
+    width: 100%;
+    max-width: 450px; /* Slightly wider to match main container */
+    margin: 25px auto; /* Increased margin */
+    border: 2px solid #555;
+    border-radius: 10px; /* Matched border-radius */
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 320px; /* Slightly increased height */
+    position: relative;
+}
+video#cameraVideo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#cameraErrorMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background for text */
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+/* --- Admin Dashboard Specific Styles --- */
+.admin-dashboard-container {
+    max-width: 900px; /* Even wider for dashboard content */
+    padding: 40px; /* Keep padding consistent */
+    margin: 30px auto; /* Adjust margin for dashboard */
+}
+
+.admin-dashboard-container h2 {
+    margin-bottom: 30px; /* More space below heading */
+    font-size: 2.2em; /* Larger heading for dashboard */
+    padding-bottom: 20px;
+    border-bottom: 2px solid #dcdcdc; /* More prominent separator */
+}
+
+.admin-dashboard-container p {
+    margin-bottom: 15px;
+}
+
+/* Filter Form Styling */
+.filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Larger min-width for filters */
+    gap: 20px; /* Increased gap */
+    margin-top: 30px;
+    padding: 25px; /* More padding */
+    background-color: #fcfdfe; /* Match input background, very subtle */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 35px; /* More space below filters */
+    text-align: left;
+}
+
+.filter-form label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.filter-form input[type="text"],
+.filter-form input[type="date"],
+.filter-form select { /* Added select for consistency in filter form */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c2d1e0;
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: #ffffff; /* White for clarity in filters */
+}
+.filter-form input[type="text"]:focus,
+.filter-form input[type="date"]:focus,
+.filter-form select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+
+/* Button Container for alignment */
+.filter-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 20px; /* Increased gap between buttons */
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 15px; /* More space from inputs */
+}
+
+.filter-form button {
+    background-color: #28a745; /* Green for apply */
+    color: white;
+    padding: 12px 20px; /* Consistent padding */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.05em; /* Consistent font size */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-width: 130px; /* Ensure buttons are not too small */
+}
+
+.filter-form button.reset-button {
+    background-color: #dc3545; /* Red for reset */
+}
+.filter-form button:hover {
+    opacity: 0.95; /* Subtle opacity change */
+    transform: translateY(-1px); /* Less aggressive lift */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Attendance Table Styling */
+.attendance-table-container {
+    margin-top: 40px; /* More space above table */
+    overflow-x: auto;
+    border: 1px solid #e0e0e0; /* Subtle border around table container */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Very light shadow for table */
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0; /* No margin below table if container has shadow */
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding: 15px 18px; /* More padding in cells for readability */
+    border: 1px solid #eef2f6; /* Lighter borders for cells */
+    text-align: left;
+    font-size: 0.95em; /* Consistent font size */
+}
+
+.attendance-table th {
+    background-color: #f5f8fb; /* Slightly darker header background */
+    font-weight: 600; /* Medium bold */
+    color: #444; /* Darker header text */
+    text-transform: uppercase; /* Formal touch */
+    letter-spacing: 0.03em;
+}
+
+.attendance-table tr:nth-child(even) {
+    background-color: #f9fbfe; /* Very light zebra striping */
+}
+
+.attendance-table tr:hover {
+    background-color: #eef2f6; /* Subtle hover effect */
+}
+
+/* Message for no records */
+.no-records-message {
+    padding: 25px; /* More padding */
+    background-color: #fff8e1; /* Slightly richer yellow */
+    border: 1px solid #ffe082;
+    color: #8d6e63; /* Softer, professional brown-grey text */
+    border-radius: 8px;
+    margin-top: 25px; /* More space */
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Light shadow */
+}
+
+/* Logout link at the bottom */
+.admin-dashboard-container .logout-link {
+    display: block;
+    margin-top: 40px; /* More space */
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #007bff; /* Keep primary blue */
+}

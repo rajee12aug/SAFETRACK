@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - SafeTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form-container">
+    <h2>Register</h2>
+    <form action="register.php" method="post">
+        <label for="role">Role:</label>
+        <select name="role" required>
+            <option value="worker">Worker</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <label for="worker_id">ID:</label>
+        <input type="text" name="worker_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Register</button>
+    </form>
+    <p>Already registered? <a href="login.html">Login here</a></p>
+</div>
+</body>
+</html>
