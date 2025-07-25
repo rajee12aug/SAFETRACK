@@ -1,1 +1,1 @@
-# SAFETRACK
+SafeTrack is a web-based application designed to streamline worker attendance tracking and enhance safety management across different operational zones. It provides a secure, role-based login system for both workers and administrators, enabling workers to log their entry into specific areas after completing a safety checklist, while giving administrators a comprehensive dashboard to view and filter all attendance records for improved accountability and oversight.
